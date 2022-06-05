@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "data": {
+            "type": "object",
+            "properties": {
+                "sizeA": {
+                    "type": "number",
+                    "pattern": "^[0-9]+$"
+                },
+                "sizeB": {
+                    "type": "number",
+                    "pattern": "^[0-9]+$"
+                },
+                "sizeC": {
+                    "type": "number",
+                    "pattern": "^[0-9]+$"
+                }
+            }
+        }
+    }
+}

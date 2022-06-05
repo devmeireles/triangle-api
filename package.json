@@ -1,0 +1,51 @@
+{
+  "name": "triangle-classification-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslint.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start:dev": "serverless offline start --stage dev",
+    "style:fix": "prettier --write 'src/**/*.ts' && npx prettier --write 'test/*.ts' && eslint ./src --ext .ts --fix",
+    "test": "jest --projects ./test --runInBand",
+    "test:coverage": "set NODE_ENV=test && jest --projects ./test --runInBand --coverage",
+    "deploy:dev": "serverless deploy --aws-profile triangle-api --stage dev",
+    "deploy:stage": "serverless deploy --aws-profile triangle-api --stage stage",
+    "deploy:prod": "serverless deploy --aws-profile triangle-api --stage prod",
+    "deploy:database:dev": "cd ./resources/database && serverless deploy --aws-profile triangle-api --stage dev",
+    "deploy:database:stage": "cd ./resources/database && serverless deploy --aws-profile triangle-api --stage stage",
+    "deploy:database:prod": "cd ./resources/database && serverless deploy --aws-profile triangle-api --stage prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1148.0",
+    "serverless": "^3.19.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.97",
+    "@types/jest": "^28.1.0",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.16.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "jest": "^27.0.2",
+    "prettier": "^2.6.2",
+    "serverless-api-gateway-throttling": "^1.2.2",
+    "serverless-offline": "^8.8.0",
+    "serverless-webpack": "^5.7.1",
+    "ts-jest": "^28.0.3",
+    "ts-loader": "^9.3.0",
+    "ts-node": "^10.8.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
